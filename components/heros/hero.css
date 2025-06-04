@@ -7,12 +7,6 @@
   position: relative;
   overflow: visible;
   padding-bottom: 4rem;
-  padding-top: 4rem; /* Space for fixed navbar */
-}
-
-/* Navbar Spacer */
-.hero-navbar-spacer {
-  height: 2rem; /* Additional space for visual breathing room */
 }
 
 /* Top Bar Styles */
