@@ -4,8 +4,6 @@ import * as React from "react"
 import { Facebook, Twitter, Instagram, Linkedin, MapPin, Mail, ChevronDown, ArrowRight } from "lucide-react"
 import "./hero.css"
 
-import { Navbar } from "../navbar/Navbar"
-
 // Images object for easy management
 const heroImages = [
   {
@@ -117,9 +115,10 @@ export function Hero() {
               </div>
             )}
           </div>
-        </div>
-      </div>      {/* Second div - Empty spacer */}
-      <Navbar />
+        </div>      </div>
+
+      {/* Second div - Empty spacer for navbar space */}
+      <div className="hero-navbar-spacer"></div>
 
       {/* Third div - Main content with title, description, and buttons */}
       <div className="hero-content">

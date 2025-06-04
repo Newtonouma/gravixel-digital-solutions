@@ -119,8 +119,7 @@ export function Navbar() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="navbar-trigger">Home</NavigationMenuTrigger>                <NavigationMenuContent className="navbar-content">
-                  <ul className="navbar-grid-featured">
+                <NavigationMenuTrigger className="navbar-trigger">Home</NavigationMenuTrigger>                <NavigationMenuContent className="navbar-content">                  <ul className="navbar-grid-featured">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link className="navbar-link-featured" href="/">
