@@ -10,7 +10,8 @@ import FAQ from "../../../components/faq/FAQ"
 import Message from "../../../components/message/Message"
 import Footer from "../../../components/footer/Footer"
 
-export default function HomePage() {  return (
+export default function Home() {
+  return (
     <div className="min-h-screen">
       <Hero />
       <About />
