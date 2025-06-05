@@ -54,8 +54,14 @@
   * {
     border-color: #e5e7eb;
   }
+  
+  html {
+    overflow-x: hidden;
+  }
+  
   body {
     background-color: #ffffff;
     color: #1f2937;
+    overflow-x: hidden;
   }
 }

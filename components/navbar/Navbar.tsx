@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import "./navbar.css"
 
 import {
@@ -15,41 +15,41 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
+const portfolioItems: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "E-commerce Solutions",
+    href: "/portfolio/ecommerce",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Complete online stores with payment processing, inventory management, and modern design.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Mobile Applications",
+    href: "/portfolio/mobile",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Cross-platform mobile apps for iOS and Android with native performance.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "UI/UX Design",
+    href: "/portfolio/design",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "User-centered designs that enhance user experience and drive conversions.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Analytics & Insights",
+    href: "/portfolio/analytics",
+    description: "Data-driven solutions to track performance and optimize business growth.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Cloud Integration",
+    href: "/portfolio/cloud",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Scalable cloud solutions for modern businesses with high availability and security.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Digital Marketing",
+    href: "/portfolio/marketing",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Comprehensive digital marketing strategies to boost your online presence.",
   },
 ]
 
@@ -112,73 +112,78 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="navbar-desktop">
-          <NavigationMenu viewport={false}>
-            <NavigationMenuList className="navbar-menu">              <NavigationMenuItem>
+          <NavigationMenu viewport={false}>            <NavigationMenuList className="navbar-menu">
+              <NavigationMenuItem>
                 <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} navbar-trigger`}>
-                  <Link href="/docs">Docs</Link>
+                  <Link href="/">Home</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+              
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="navbar-trigger">Home</NavigationMenuTrigger>                <NavigationMenuContent className="navbar-content">                  <ul className="navbar-grid-featured">
+                <NavigationMenuTrigger className="navbar-trigger">About</NavigationMenuTrigger>
+                <NavigationMenuContent className="navbar-content">
+                  <ul className="navbar-grid-featured">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link className="navbar-link-featured" href="/">
-                          <div className="navbar-link-title">shadcn/ui</div>
-                          <p className="navbar-link-description">Beautifully designed components built with Tailwind CSS.</p>
+                          <div className="navbar-link-title">Gravixel Digital Solutions</div>
+                          <p className="navbar-link-description">Leading digital transformation with innovative web solutions and cutting-edge technology.</p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem href="/docs" title="Introduction">Re-usable components built using Radix UI and Tailwind CSS.</ListItem>
-                    <ListItem href="/docs/installation" title="Installation">How to install dependencies and structure your app.</ListItem>
-                    <ListItem href="/docs/primitives/typography" title="Typography">Styles for headings, paragraphs, lists...etc</ListItem>
-                  </ul>
+                    <ListItem href="/about" title="Our Story">Learn about our journey and mission to transform businesses digitally.</ListItem>
+                    <ListItem href="/about/team" title="Our Team">Meet the talented professionals behind our innovative solutions.</ListItem>
+                    <ListItem href="/about/careers" title="Join Us">Explore career opportunities and become part of our growing team.</ListItem>                  </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem><NavigationMenuItem>
-                <NavigationMenuTrigger className="navbar-trigger">Components</NavigationMenuTrigger>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="navbar-trigger">Portfolio</NavigationMenuTrigger>
                 <NavigationMenuContent className="navbar-content">
                   <ul className="navbar-grid-components">
-                    {components.map((component) => (
+                    {portfolioItems.map((item) => (
                       <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
                       >
-                        {component.description}
+                        {item.description}
                       </ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+              
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="navbar-trigger">List</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="navbar-trigger">Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="navbar-content">
                   <ul className="navbar-grid-simple">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-link">
-                          <div className="navbar-link-title">Components</div>
+                        <Link href="/services/web-development" className="navbar-link">
+                          <div className="navbar-link-title">Web Development</div>
                           <div className="navbar-link-description">
-                            Browse all components in the library.
+                            Custom websites and web applications built with modern technologies.
                           </div>
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-link">
-                          <div className="navbar-link-title">Documentation</div>
+                        <Link href="/services/mobile-apps" className="navbar-link">
+                          <div className="navbar-link-title">Mobile Applications</div>
                           <div className="navbar-link-description">
-                            Learn how to use the library.
+                            Cross-platform mobile apps for iOS and Android.
                           </div>
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-link">
-                          <div className="navbar-link-title">Blog</div>
+                        <Link href="/services/digital-marketing" className="navbar-link">
+                          <div className="navbar-link-title">Digital Marketing</div>
                           <div className="navbar-link-description">
-                            Read our latest blog posts.
+                            Comprehensive digital marketing strategies to grow your business.
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -186,59 +191,14 @@ export function Navbar() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+              
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="navbar-trigger">Simple</NavigationMenuTrigger>
-                <NavigationMenuContent className="navbar-content">
-                  <ul className="navbar-grid-simple">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-link">Components</Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-link">Documentation</Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-link">Blocks</Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} navbar-trigger`}>
+                  <Link href="/contact">Contact</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="navbar-trigger">With Icon</NavigationMenuTrigger>
-                <NavigationMenuContent className="navbar-content">
-                  <ul className="navbar-grid-simple">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-icon-link">
-                          <CircleHelpIcon />
-                          Backlog
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-icon-link">
-                          <CircleIcon />
-                          To Do
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="navbar-icon-link">
-                          <CircleCheckIcon />
-                          Done
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+              
+              
             </NavigationMenuList>
           </NavigationMenu>
         </div>        {/* Mobile Navigation */}
@@ -259,46 +219,55 @@ export function Navbar() {
                 <X size={24} />
               </button>
             </div>
-            
-            <div className="navbar-mobile-section">
+              <div className="navbar-mobile-section">
               <h3 className="navbar-mobile-title">Navigation</h3>
-              <Link href="/docs" className="navbar-mobile-link" onClick={closeNavbar}>
-                Docs
-              </Link>
               <Link href="/" className="navbar-mobile-link" onClick={closeNavbar}>
                 Home
               </Link>
+              <Link href="/about" className="navbar-mobile-link" onClick={closeNavbar}>
+                About
+              </Link>
+              <Link href="/services" className="navbar-mobile-link" onClick={closeNavbar}>
+                Services
+              </Link>
+              <Link href="/portfolio" className="navbar-mobile-link" onClick={closeNavbar}>
+                Portfolio
+              </Link>
+              <Link href="/contact" className="navbar-mobile-link" onClick={closeNavbar}>
+                Contact
+              </Link>
             </div>
-            
+              <div className="navbar-mobile-section">
+              <h3 className="navbar-mobile-title">Our Services</h3>
+              <Link href="/services/web-development" className="navbar-mobile-link" onClick={closeNavbar}>
+                Web Development
+              </Link>
+              <Link href="/services/mobile-apps" className="navbar-mobile-link" onClick={closeNavbar}>
+                Mobile Applications
+              </Link>
+              <Link href="/services/digital-marketing" className="navbar-mobile-link" onClick={closeNavbar}>
+                Digital Marketing
+              </Link>
+              <Link href="/services/cloud-solutions" className="navbar-mobile-link" onClick={closeNavbar}>
+                Cloud Solutions
+              </Link>
+            </div>
+
             <div className="navbar-mobile-section">
-              <h3 className="navbar-mobile-title">Components</h3>
-              {components.slice(0, 4).map((component) => (
+              <h3 className="navbar-mobile-title">Recent Projects</h3>
+              {portfolioItems.slice(0, 4).map((item) => (
                 <Link 
-                  key={component.title} 
-                  href={component.href} 
+                  key={item.title} 
+                  href={item.href} 
                   className="navbar-mobile-link"
                   onClick={closeNavbar}
                 >
-                  {component.title}
+                  {item.title}
                 </Link>
               ))}
             </div>
 
-            <div className="navbar-mobile-section">
-              <h3 className="navbar-mobile-title">Quick Links</h3>
-              <Link href="#" className="navbar-mobile-link" onClick={closeNavbar}>
-                <CircleHelpIcon size={16} />
-                Backlog
-              </Link>
-              <Link href="#" className="navbar-mobile-link" onClick={closeNavbar}>
-                <CircleIcon size={16} />
-                To Do
-              </Link>
-              <Link href="#" className="navbar-mobile-link" onClick={closeNavbar}>
-                <CircleCheckIcon size={16} />
-                Done
-              </Link>
-            </div>
+            
           </div>
         </div>
 
